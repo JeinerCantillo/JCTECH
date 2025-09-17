@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JCTECHSUPPORT</title>
+  <style>
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background: #f0f2f5; color: #333; }
+    header { background: linear-gradient(135deg, #0d47a1, #1976d2); color: white; padding: 30px; text-align: center; }
+    nav { background: #1565c0; padding: 15px; text-align: center; }
+    nav a { color: white; margin: 0 20px; text-decoration: none; font-weight: bold; transition: 0.3s; }
+    nav a:hover { color: #ffeb3b; }
+    .container { padding: 40px 20px; max-width: 1200px; margin: auto; }
+    h2 { color: #0d47a1; margin-bottom: 20px; }
+
+    /* Productos */
+    .grid { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
+    .card { background: white; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); width: 250px; text-align: center; padding: 15px; transition: transform 0.3s; }
+    .card:hover { transform: translateY(-5px); }
+    .card img { width: 100%; height: 180px; object-fit: cover; border-radius: 8px; }
+    .card h3 { margin: 10px 0; }
+    .card p { font-size: 16px; font-weight: bold; color: #1565c0; }
+    button { background: #1976d2; color: white; border: none; padding: 10px 15px; border-radius: 5px; cursor: pointer; transition: 0.3s; }
+    button:hover { background: #0d47a1; }
+
+    /* Carrusel */
+    .carousel { position: relative; overflow: hidden; width: 100%; max-width: 1000px; margin: auto; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
+    .slides { display: flex; transition: transform 0.8s ease-in-out; }
+    .slide { min-width: 100%; box-sizing: border-box; position: relative; }
+    .slide img { width: 100%; height: 400px; object-fit: cover; border-radius: 10px; }
+    .caption { position: absolute; bottom: 20px; left: 20px; background: rgba(0,0,0,0.6); color: white; padding: 15px; border-radius: 8px; }
+
+    /* Contacto */
+    form input, form textarea { width: 100%; padding: 10px; margin: 8px 0; border: 1px solid #ccc; border-radius: 5px; }
+    footer { background: #0d47a1; color: white; text-align: center; padding: 15px; margin-top: 30px; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>JCTECHSUPPORT</h1>
+  <p>Venta de productos tecnológicos y soporte técnico especializado</p>
+</header>
+
+<nav>
+  <a href="#productos">Productos</a>
+  <a href="#servicios">Servicios</a>
+  <a href="#contacto">Contacto</a>
+</nav>
+
+<!-- Productos -->
+<div class="container" id="productos">
+  <h2>Catálogo de Productos</h2>
+  <div class="grid">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8" alt="Laptop HP">
+      <h3>Laptop HP ProBook</h3>
+      <p>$2,500,000</p>
+      <button>Comprar</button>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1581349480544-fb52b1f8f9b6" alt="Mouse Logitech">
+      <h3>Mouse Logitech</h3>
+      <p>$80,000</p>
+      <button>Comprar</button>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1593642532842-98d0fd5ebc1a" alt="Teclado Mecánico">
+      <h3>Teclado Mecánico RGB</h3>
+      <p>$250,000</p>
+      <button>Comprar</button>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1619983081650-08c6525a96af" alt="Audífonos Gamer">
+      <h3>Audífonos Gamer</h3>
+      <p>$180,000</p>
+      <button>Comprar</button>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1527430253228-e93688616381" alt="Impresora Canon">
+      <h3>Impresora Canon</h3>
+      <p>$750,000</p>
+      <button>Comprar</button>
+    </div>
+  </div>
+</div>
+
+<!-- Servicios (Carrusel) -->
+<div class="container" id="servicios">
+  <h2>Servicios de Soporte Técnico</h2>
+  <div class="carousel">
+    <div class="slides">
+      <div class="slide">
+        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475" alt="Mantenimiento de computadores">
+        <div class="caption">Mantenimiento preventivo y correctivo de computadores.</div>
+      </div>
+      <div class="slide">
+        <img src="https://images.unsplash.com/photo-1581090700227-4c4f7b6eb5d2" alt="Instalación de software">
+        <div class="caption">Instalación y actualización de software.</div>
+      </div>
+      <div class="slide">
+        <img src="https://images.unsplash.com/photo-1590608897129-79da98d159d9" alt="Recuperación de datos">
+        <div class="caption">Recuperación de datos y respaldo seguro.</div>
+      </div>
+      <div class="slide">
+        <img src="https://images.unsplash.com/photo-1593642634315-48f5414c3ad9" alt="Soporte remoto">
+        <div class="caption">Soporte técnico remoto y presencial.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Contacto -->
+<div class="container" id="contacto">
+  <h2>Contacto</h2>
+  <form>
+    <label>Nombre:</label>
+    <input type="text" name="nombre" required>
+    <label>Email:</label>
+    <input type="email" name="email" required>
+    <label>Mensaje:</label>
+    <textarea name="mensaje" rows="5" required></textarea>
+    <button type="submit">Enviar</button>
+  </form>
+</div>
+
+<footer>
+  <p>&copy; 2025 JCTECHSUPPORT - Todos los derechos reservados</p>
+</footer>
+
+<script>
+  // Carrusel automático
+  let index = 0;
+  const slides = document.querySelector(".slides");
+  const totalSlides = document.querySelectorAll(".slide").length;
+
+  function showNextSlide() {
+    index++;
+    if (index >= totalSlides) index = 0;
+    slides.style.transform = `translateX(${-index * 100}%)`;
+  }
+
+  setInterval(showNextSlide, 4000); // cada 4 segundos
+</script>
+
+</body>
+</html>

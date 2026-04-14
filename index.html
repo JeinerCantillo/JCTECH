@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>JCTECH | Soporte TI Profesional & Descargas</title>
-  <meta name="description" content="JCTECH - Jeiner Cantillo, Tecnólogo en Sistemas. Soporte remoto, reparación de impresoras HP, activación de Windows/Office y descarga de drivers. Ciénaga, Magdalena.">
+  <meta name="description" content="JCTECH - Tecnología y soporte TI en Ciénaga, Magdalena. Reparación de impresoras HP, soporte remoto 24/7, activación de Windows/Office y zona de descargas.">
   
   <!-- Fuentes e Iconos -->
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -56,6 +56,20 @@
     .swiper { width: 100%; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
     .swiper-slide img { width: 100%; height: 400px; object-fit: cover; }
     
+    /* ===== BANNERS PROMOCIONALES ===== */
+    .promo-banner {
+      border-radius: 30px; padding: 40px; color: white;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; margin: 40px 0;
+      box-shadow: 0 20px 30px -10px rgba(0,0,0,0.2);
+    }
+    .banner-soporte { background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); }
+    .banner-descargas { background: linear-gradient(135deg, #065f46 0%, #10b981 100%); }
+    .banner-contacto { background: linear-gradient(135deg, #991b1b 0%, #ef4444 100%); }
+    .promo-banner h3 { font-size: 2rem; margin-bottom: 10px; }
+    .promo-banner .btn { background: white; color: #1e293b; padding: 14px 30px; border-radius: 50px; font-weight: 700; text-decoration: none; transition: 0.2s; }
+    .promo-banner .btn:hover { background: #f8fafc; transform: scale(1.05); }
+    
     /* ===== SECCIONES GENERALES ===== */
     section { padding: 80px 5%; }
     .section-title { font-size: 2.5rem; font-weight: 700; margin-bottom: 3rem; text-align: center; }
@@ -71,21 +85,11 @@
     .service-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(37,99,235,0.1); }
     .service-icon { font-size: 2.5rem; color: var(--primary); margin-bottom: 1.5rem; }
     
-    /* ===== SOPORTE REMOTO DESTACADO ===== */
-    .remote-support-banner {
-      background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
-      border-radius: 30px; padding: 40px; color: white;
-      display: flex; align-items: center; justify-content: space-between;
-      flex-wrap: wrap; margin: 40px 0;
-      box-shadow: 0 20px 30px -10px rgba(37,99,235,0.3);
-    }
-    .remote-support-banner h3 { font-size: 2rem; margin-bottom: 10px; }
-    .remote-support-banner .btn { background: white; color: var(--primary); padding: 14px 30px; border-radius: 50px; font-weight: 700; text-decoration: none; transition: 0.2s; }
-    .remote-support-banner .btn:hover { background: #f0f9ff; transform: scale(1.05); }
-    
-    /* ===== SECCIÓN DESCARGAS ===== */
+    /* ===== ZONA DE DESCARGAS MEJORADA ===== */
+    .download-category { margin-bottom: 50px; }
+    .category-title { font-size: 1.8rem; margin-bottom: 25px; border-left: 6px solid var(--primary); padding-left: 20px; }
     .downloads-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px;
     }
     .download-card {
       background: white; border-radius: 20px; padding: 25px 15px; text-align: center;
@@ -93,11 +97,11 @@
     }
     .download-card:hover { box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
     .download-card i { font-size: 2.5rem; color: var(--primary); margin-bottom: 15px; }
-    .download-card h4 { margin-bottom: 10px; }
+    .download-card h4 { margin-bottom: 10px; font-size: 1.1rem; }
     .download-btn {
       display: inline-block; margin-top: 15px; background: var(--primary); color: white;
       padding: 8px 20px; border-radius: 40px; text-decoration: none; font-weight: 600;
-      transition: 0.2s;
+      transition: 0.2s; border: none; cursor: pointer;
     }
     .download-btn:hover { background: var(--primary-dark); }
     
@@ -130,7 +134,7 @@
       .nav-links { display: none; }
       .menu-toggle { display: block; }
       .hero h1 { font-size: 2.2rem; }
-      .remote-support-banner { flex-direction: column; text-align: center; gap: 20px; }
+      .promo-banner { flex-direction: column; text-align: center; gap: 20px; }
     }
   </style>
 </head>
@@ -143,7 +147,7 @@
     <li><a href="#inicio">Inicio</a></li>
     <li><a href="#soporte-remoto">Soporte Remoto</a></li>
     <li><a href="#servicios">Servicios</a></li>
-    <li><a href="#descargas">Descargas</a></li>
+    <li><a href="#descargas">Zona de Descargas</a></li>
     <li><a href="#portafolio">Proyectos</a></li>
     <li><a href="#contacto">Contacto</a></li>
   </ul>
@@ -172,7 +176,7 @@
 <section id="inicio" class="hero">
   <div class="hero-content" data-aos="fade-right">
     <h1>Soluciones <span class="highlight">Tecnológicas</span> que Impulsan tu Negocio</h1>
-    <p style="font-size:1.2rem; margin-bottom:2rem; color:#cbd5e1;">Jeiner Cantillo · Tecnólogo en Sistemas · Ciénaga, Magdalena</p>
+    <p style="font-size:1.2rem; margin-bottom:2rem; color:#cbd5e1;">JCTECH · Tecnología y Soporte TI · Ciénaga, Magdalena</p>
     <a href="#contacto" class="btn" style="background:var(--primary); padding:12px 30px; border-radius:40px; color:white; text-decoration:none; font-weight:600;">Solicitar diagnóstico gratis</a>
   </div>
   <div style="margin-top: 40px;" data-aos="fade-left">
@@ -189,20 +193,31 @@
   </div>
 </section>
 
-<!-- SOPORTE REMOTO DESTACADO -->
+<!-- BANNER SOPORTE REMOTO 24/7 -->
 <section id="soporte-remoto" style="padding: 20px 5%;">
-  <div class="remote-support-banner" data-aos="zoom-in">
+  <div class="promo-banner banner-soporte" data-aos="zoom-in">
     <div>
       <h3>💻 Soporte Remoto 24/7</h3>
-      <p style="font-size: 1.2rem; opacity: 0.9;">Resuelvo problemas de software, activaciones y configuraciones sin que muevas tu equipo. ¡Rápido y seguro!</p>
+      <p style="font-size: 1.2rem; opacity: 0.9;">Asistencia inmediata para software, activaciones y configuraciones sin mover tu equipo.</p>
     </div>
     <a href="https://wa.me/57XXXXXXXXXX?text=Hola%20JCTECH%2C%20necesito%20soporte%20remoto" target="_blank" class="btn"><i class="fab fa-whatsapp"></i> Conectar ahora</a>
   </div>
 </section>
 
+<!-- BANNER ZONA DE DESCARGAS (llamativo) -->
+<section style="padding: 20px 5%;">
+  <div class="promo-banner banner-descargas" data-aos="zoom-in">
+    <div>
+      <h3>📦 Zona de Descargas Gratuita</h3>
+      <p style="font-size: 1.2rem; opacity: 0.9;">Drivers, ISOs, utilidades y herramientas esenciales para tu PC.</p>
+    </div>
+    <a href="#descargas" class="btn"><i class="fas fa-download"></i> Explorar descargas</a>
+  </div>
+</section>
+
 <!-- SERVICIOS -->
 <section id="servicios">
-  <p class="section-subtitle">LO QUE HAGO MEJOR</p>
+  <p class="section-subtitle">LO QUE HACEMOS MEJOR</p>
   <h2 class="section-title">Servicios Especializados</h2>
   <div class="services-grid">
     <div class="service-card" data-aos="flip-left">
@@ -225,7 +240,6 @@
       <h3>Reparación de PC</h3>
       <p>Cambio de componentes, limpieza profunda, optimización de Windows y recuperación de datos.</p>
     </div>
-    <!-- Nuevo servicio: Activación de Windows/Office -->
     <div class="service-card" data-aos="flip-left" data-aos-delay="400">
       <i class="fas fa-key service-icon"></i>
       <h3>Activación Windows & Office</h3>
@@ -234,37 +248,119 @@
   </div>
 </section>
 
-<!-- SECCIÓN DESCARGAS ÚTILES -->
+<!-- ZONA DE DESCARGAS AMPLIADA -->
 <section id="descargas" style="background: #f1f5f9;">
   <p class="section-subtitle">RECURSOS GRATUITOS</p>
-  <h2 class="section-title">Descargas para tu equipo</h2>
-  <div class="downloads-grid">
-    <div class="download-card" data-aos="fade-up">
-      <i class="fas fa-download"></i>
-      <h4>Drivers HP LaserJet</h4>
-      <p>Controladores oficiales para impresoras HP.</p>
-      <a href="https://support.hp.com/co-es/drivers" target="_blank" class="download-btn">Descargar</a>
-    </div>
-    <div class="download-card" data-aos="fade-up" data-aos-delay="100">
-      <i class="fab fa-windows"></i>
-      <h4>ISO Windows 10/11</h4>
-      <p>Imágenes oficiales de Microsoft.</p>
-      <a href="https://www.microsoft.com/es-co/software-download/windows10" target="_blank" class="download-btn">Descargar</a>
-    </div>
-    <div class="download-card" data-aos="fade-up" data-aos-delay="200">
-      <i class="fas fa-file-alt"></i>
-      <h4>Office Suite</h4>
-      <p>Instalador de Microsoft Office.</p>
-      <a href="https://www.microsoft.com/es-co/microsoft-365/try" target="_blank" class="download-btn">Descargar</a>
-    </div>
-    <div class="download-card" data-aos="fade-up" data-aos-delay="300">
-      <i class="fas fa-toolbox"></i>
-      <h4>Herramientas de Activación</h4>
-      <p>Scripts seguros (KMS/VLMCSD).</p>
-      <a href="#" onclick="alert('Contáctame por WhatsApp para recibir el enlace de descarga personalizada.'); return false;" class="download-btn">Solicitar</a>
+  <h2 class="section-title">Centro de Descargas JCTECH</h2>
+  
+  <!-- Categoría: Drivers -->
+  <div class="download-category">
+    <h3 class="category-title"><i class="fas fa-microchip"></i> Drivers y Controladores</h3>
+    <div class="downloads-grid">
+      <div class="download-card" data-aos="fade-up">
+        <i class="fab fa-hp"></i>
+        <h4>HP LaserJet Universal</h4>
+        <p>Controlador oficial PCL6</p>
+        <a href="https://support.hp.com/co-es/drivers" target="_blank" class="download-btn">Descargar</a>
+      </div>
+      <div class="download-card" data-aos="fade-up">
+        <i class="fas fa-print"></i>
+        <h4>Epson L-Series</h4>
+        <p>Drivers para impresoras Epson</p>
+        <a href="https://www.epson.com.co/Soporte" target="_blank" class="download-btn">Descargar</a>
+      </div>
+      <div class="download-card" data-aos="fade-up">
+        <i class="fas fa-wifi"></i>
+        <h4>Realtek LAN/WiFi</h4>
+        <p>Controladores de red</p>
+        <a href="https://www.realtek.com/en/downloads" target="_blank" class="download-btn">Descargar</a>
+      </div>
+      <div class="download-card" data-aos="fade-up">
+        <i class="fas fa-tv"></i>
+        <h4>NVIDIA / AMD</h4>
+        <p>Drivers gráficos</p>
+        <a href="https://www.nvidia.com/Download/index.aspx?lang=es" target="_blank" class="download-btn">NVIDIA</a>
+        <a href="https://www.amd.com/es/support" target="_blank" style="margin-top:5px;" class="download-btn">AMD</a>
+      </div>
     </div>
   </div>
-  <p style="text-align:center; margin-top:30px; font-size:0.9rem; color:#64748b;">*Los enlaces externos son a sitios oficiales. Para herramientas específicas, contáctame y te asesoro.</p>
+  
+  <!-- Categoría: Sistemas Operativos -->
+  <div class="download-category">
+    <h3 class="category-title"><i class="fab fa-windows"></i> Sistemas Operativos (ISO Oficiales)</h3>
+    <div class="downloads-grid">
+      <div class="download-card" data-aos="fade-up">
+        <i class="fab fa-windows"></i>
+        <h4>Windows 10 ISO</h4>
+        <p>Imagen oficial Microsoft</p>
+        <a href="https://www.microsoft.com/es-co/software-download/windows10" target="_blank" class="download-btn">Descargar</a>
+      </div>
+      <div class="download-card" data-aos="fade-up">
+        <i class="fab fa-windows"></i>
+        <h4>Windows 11 ISO</h4>
+        <p>Última versión 23H2</p>
+        <a href="https://www.microsoft.com/es-co/software-download/windows11" target="_blank" class="download-btn">Descargar</a>
+      </div>
+      <div class="download-card" data-aos="fade-up">
+        <i class="fab fa-linux"></i>
+        <h4>Ubuntu Desktop</h4>
+        <p>Linux para usuarios</p>
+        <a href="https://ubuntu.com/download/desktop" target="_blank" class="download-btn">Descargar</a>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Categoría: Ofimática y Utilidades -->
+  <div class="download-category">
+    <h3 class="category-title"><i class="fas fa-file-alt"></i> Ofimática y Herramientas</h3>
+    <div class="downloads-grid">
+      <div class="download-card" data-aos="fade-up">
+        <i class="fas fa-file-word"></i>
+        <h4>Microsoft Office</h4>
+        <p>Instalador oficial</p>
+        <a href="https://www.microsoft.com/es-co/microsoft-365/try" target="_blank" class="download-btn">Probar</a>
+      </div>
+      <div class="download-card" data-aos="fade-up">
+        <i class="fas fa-file-pdf"></i>
+        <h4>Adobe Acrobat Reader</h4>
+        <p>Lector PDF gratuito</p>
+        <a href="https://get.adobe.com/es/reader/" target="_blank" class="download-btn">Descargar</a>
+      </div>
+      <div class="download-card" data-aos="fade-up">
+        <i class="fas fa-compress"></i>
+        <h4>WinRAR / 7-Zip</h4>
+        <p>Compresores de archivos</p>
+        <a href="https://www.winrar.es/descargas" target="_blank" class="download-btn">WinRAR</a>
+        <a href="https://www.7-zip.org/download.html" target="_blank" style="margin-top:5px;" class="download-btn">7-Zip</a>
+      </div>
+      <div class="download-card" data-aos="fade-up">
+        <i class="fas fa-shield-alt"></i>
+        <h4>Antivirus Gratuitos</h4>
+        <p>Avast / AVG / Kaspersky Free</p>
+        <a href="#" onclick="alert('Visita el sitio oficial de cada antivirus para descarga segura.'); return false;" class="download-btn">Ver opciones</a>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Categoría: Herramientas de Activación (con advertencia) -->
+  <div class="download-category">
+    <h3 class="category-title"><i class="fas fa-toolbox"></i> Herramientas de Activación (Bajo Solicitud)</h3>
+    <div class="downloads-grid">
+      <div class="download-card" data-aos="fade-up">
+        <i class="fas fa-key"></i>
+        <h4>KMSpico / MAS</h4>
+        <p>Scripts seguros de activación</p>
+        <button onclick="alert('Por seguridad, solicita el enlace por WhatsApp. JCTECH te guiará en el proceso.')" class="download-btn">Solicitar acceso</button>
+      </div>
+      <div class="download-card" data-aos="fade-up">
+        <i class="fas fa-terminal"></i>
+        <h4>Microsoft Activation Scripts</h4>
+        <p>Herramienta open-source</p>
+        <button onclick="alert('Contáctanos por WhatsApp para recibir el enlace verificado.')" class="download-btn">Solicitar</button>
+      </div>
+    </div>
+  </div>
+  <p style="text-align:center; margin-top:30px; font-size:0.9rem; color:#64748b;">* Los enlaces a sitios externos son proporcionados para tu comodidad. JCTECH no aloja archivos con derechos de autor. Para asistencia personalizada, contáctanos.</p>
 </section>
 
 <!-- PORTAFOLIO CON FILTROS -->
@@ -321,7 +417,7 @@
     </div>
     <div style="flex:1; min-width:250px;">
       <h3>Contacto Directo</h3>
-      <p><i class="fas fa-map-marker-alt"></i> Ciénaga, Magdalena</p>
+      <p><i class="fas fa-map-marker-alt"></i> Ciénaga, Magdalena, Colombia</p>
       <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/57XXXXXXXXXX" target="_blank">+57 300 000 0000</a></p>
       <p><i class="far fa-envelope"></i> contacto@jctech.co</p>
       <div style="margin-top:30px;">

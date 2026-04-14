@@ -3,246 +3,314 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JCTECH | Soporte TI Profesional</title>
-  <meta name="description" content="JCTECH - Tecnólogo en Sistemas. Reparación de impresoras HP, cámaras, PC y soporte remoto. Servicio en Ciénaga, Magdalena.">
+  <title>JCTECH | Tecnología que Transforma</title>
+  <meta name="description" content="JCTECH - Jeiner Cantillo, Tecnólogo en Sistemas. Soporte TI profesional, reparación de impresoras HP, cámaras y sistemas. Servicio en Ciénaga, Magdalena.">
   
-  <!-- Tailwind CSS (Moderno y profesional) -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Fuentes e Iconos -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   
-  <!-- Fuentes elegantes -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  
-  <!-- Iconos (Feather Icons) -->
-  <script src="https://unpkg.com/feather-icons"></script>
+  <!-- Librerías para efectos profesionales -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
   
   <style>
-    body { font-family: 'Inter', sans-serif; }
-    .gradient-bg {
-      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #f9fafc; color: #1e1e2f; }
+    :root { --primary: #2563eb; --primary-dark: #1d4ed8; --accent: #06b6d4; --dark: #0f172a; --glass-bg: rgba(255,255,255,0.85); }
+    
+    /* ===== MENÚ LATERAL MÓVIL ===== */
+    .side-menu {
+      position: fixed; top: 0; left: -280px; width: 280px; height: 100vh;
+      background: var(--dark); color: white; z-index: 1000; transition: left 0.3s ease;
+      padding: 2rem 1.5rem; box-shadow: 5px 0 20px rgba(0,0,0,0.2);
     }
-    .card-hover:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-      transition: all 0.3s ease;
+    .side-menu.active { left: 0; }
+    .side-menu .close-btn { position: absolute; top: 20px; right: 20px; font-size: 1.8rem; cursor: pointer; color: #94a3b8; }
+    .side-menu ul { list-style: none; margin-top: 3rem; }
+    .side-menu ul li { margin-bottom: 1.5rem; }
+    .side-menu ul li a { color: #cbd5e1; text-decoration: none; font-size: 1.2rem; font-weight: 500; transition: color 0.2s; }
+    .side-menu ul li a:hover { color: white; }
+    .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 999; display: none; }
+    .overlay.active { display: block; }
+    
+    /* ===== HEADER ===== */
+    .navbar {
+      position: fixed; top: 0; left: 0; width: 100%; padding: 0.8rem 5%;
+      background: rgba(255,255,255,0.8); backdrop-filter: blur(10px);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05); z-index: 998;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .logo { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 1.8rem; color: var(--dark); }
+    .logo img { height: 40px; width: auto; }
+    .nav-links { display: flex; gap: 2.5rem; }
+    .nav-links a { text-decoration: none; color: #334155; font-weight: 600; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--primary); }
+    .menu-toggle { display: none; font-size: 1.8rem; cursor: pointer; color: var(--dark); }
+    
+    /* ===== HERO CON CARRUSEL ===== */
+    .hero { padding: 120px 5% 60px; background: linear-gradient(145deg, #0f172a 0%, #1e293b 100%); color: white; }
+    .hero-content { max-width: 600px; }
+    .hero h1 { font-size: 3rem; font-weight: 800; line-height: 1.2; margin-bottom: 1.5rem; }
+    .hero .highlight { color: var(--accent); }
+    .swiper { width: 100%; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
+    .swiper-slide img { width: 100%; height: 400px; object-fit: cover; }
+    
+    /* ===== SECCIONES GENERALES ===== */
+    section { padding: 80px 5%; }
+    .section-title { font-size: 2.5rem; font-weight: 700; margin-bottom: 3rem; text-align: center; }
+    .section-subtitle { color: var(--primary); font-weight: 600; letter-spacing: 1px; margin-bottom: 0.5rem; text-align: center; }
+    
+    /* ===== TARJETAS DE SERVICIO ===== */
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+    .service-card {
+      background: white; padding: 2rem 1.5rem; border-radius: 24px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: all 0.3s;
+      border: 1px solid rgba(255,255,255,0.5); backdrop-filter: blur(4px);
+    }
+    .service-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(37,99,235,0.1); }
+    .service-icon { font-size: 2.5rem; color: var(--primary); margin-bottom: 1.5rem; }
+    
+    /* ===== FILTROS DE PORTAFOLIO ===== */
+    .filter-buttons { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 40px; }
+    .filter-btn {
+      padding: 8px 20px; border: none; background: #e2e8f0; border-radius: 40px;
+      font-weight: 600; cursor: pointer; transition: all 0.2s;
+    }
+    .filter-btn.active, .filter-btn:hover { background: var(--primary); color: white; }
+    .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+    .portfolio-item { border-radius: 20px; overflow: hidden; box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+    .portfolio-item img { width: 100%; height: 220px; object-fit: cover; transition: transform 0.5s; }
+    .portfolio-item:hover img { transform: scale(1.05); }
+    
+    /* ===== COMPARADOR ANTES/DESPUÉS ===== */
+    .comparison-slider { position: relative; max-width: 800px; margin: 0 auto; border-radius: 20px; overflow: hidden; }
+    .comparison-slider img { width: 100%; display: block; }
+    .img-after { position: absolute; top: 0; left: 0; width: 50%; overflow: hidden; height: 100%; border-right: 3px solid white; }
+    .slider-handle {
+      position: absolute; top: 0; bottom: 0; left: 50%; width: 4px; background: white;
+      cursor: ew-resize; transform: translateX(-50%);
+    }
+    
+    /* ===== FOOTER ===== */
+    footer { background: var(--dark); color: #94a3b8; padding: 40px 5%; text-align: center; }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .menu-toggle { display: block; }
+      .hero h1 { font-size: 2.2rem; }
     }
   </style>
 </head>
-<body class="bg-gray-50 text-gray-800 antialiased">
+<body>
 
-<!-- ========== HERO SECTION ========== -->
-<header class="gradient-bg text-white py-16 px-4 sm:px-6 lg:px-8">
-  <div class="max-w-4xl mx-auto text-center">
-    <h1 class="text-4xl sm:text-5xl font-bold mb-4 tracking-tight">
-      Soluciones Tecnológicas con Raíces en Ciénaga
-    </h1>
-    <p class="text-xl sm:text-2xl text-gray-300 mb-6">
-      Jeiner Cantillo · Tecnólogo en Sistemas
-    </p>
-    <p class="text-lg text-gray-400 max-w-2xl mx-auto mb-8">
-      Reparación de impresoras HP, cámaras, PC y sistemas. Servicio a domicilio en Ciénaga, Magdalena y soporte remoto mundial.
-    </p>
-    <div class="flex flex-wrap justify-center gap-4">
-      <a href="#contacto" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg shadow-lg transition">
-        Solicitar Servicio
-      </a>
-      <a href="https://wa.me/57XXXXXXXXXX?text=Hola%20JCTECH%2C%20necesito%20ayuda%20con..." target="_blank" class="bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-lg shadow-lg transition flex items-center gap-2">
-        <i data-feather="message-circle"></i> WhatsApp
-      </a>
-    </div>
-  </div>
-</header>
+<!-- MENÚ LATERAL MÓVIL -->
+<div class="side-menu" id="sideMenu">
+  <i class="fas fa-times close-btn" id="closeMenu"></i>
+  <ul>
+    <li><a href="#inicio">Inicio</a></li>
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#portafolio">Portafolio</a></li>
+    <li><a href="#testimonios">Testimonios</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+  </ul>
+</div>
+<div class="overlay" id="overlay"></div>
 
-<!-- ========== SERVICIOS ========== -->
-<section class="py-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
-  <div class="text-center mb-12">
-    <h2 class="text-3xl font-bold text-gray-900 mb-2">Servicios Especializados</h2>
-    <p class="text-gray-600 text-lg">Más de [X] años resolviendo problemas técnicos complejos</p>
+<!-- HEADER -->
+<nav class="navbar">
+  <div class="logo">
+    <!-- Reemplaza con tu logo (sube una imagen a tu repo o usa texto) -->
+    <img src="https://via.placeholder.com/40x40/2563eb/ffffff?text=JC" alt="JCTECH Logo">
+    <span>JCTECH</span>
   </div>
-  
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-    <!-- Servicio 1 -->
-    <div class="bg-white p-6 rounded-xl shadow-md card-hover">
-      <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-        <i data-feather="printer" class="text-blue-600"></i>
+  <div class="nav-links">
+    <a href="#inicio">Inicio</a>
+    <a href="#servicios">Servicios</a>
+    <a href="#portafolio">Proyectos</a>
+    <a href="#contacto">Contacto</a>
+  </div>
+  <i class="fas fa-bars menu-toggle" id="menuToggle"></i>
+</nav>
+
+<!-- HERO CON CARRUSEL -->
+<section id="inicio" class="hero">
+  <div class="hero-content" data-aos="fade-right">
+    <h1>Soluciones <span class="highlight">Tecnológicas</span> que Impulsan tu Negocio</h1>
+    <p style="font-size:1.2rem; margin-bottom:2rem; color:#cbd5e1;">Jeiner Cantillo · Tecnólogo en Sistemas · Ciénaga, Magdalena</p>
+    <a href="#contacto" class="btn" style="background:var(--primary); padding:12px 30px; border-radius:40px; color:white; text-decoration:none; font-weight:600;">Solicitar diagnóstico gratis</a>
+  </div>
+  <div style="margin-top: 40px;" data-aos="fade-left">
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="https://images.pexels.com/photos/2582937/pexels-photo-2582937.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Reparación de impresora"></div>
+        <div class="swiper-slide"><img src="https://images.pexels.com/photos/442150/pexels-photo-442150.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Cámaras de seguridad"></div>
+        <div class="swiper-slide"><img src="https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Soporte técnico"></div>
       </div>
-      <h3 class="text-xl font-semibold mb-2">Impresoras HP LaserJet</h3>
-      <p class="text-gray-600">Diagnóstico y reparación de errores 49, 79, atascos, calidad de impresión. Mantenimiento preventivo.</p>
-    </div>
-    
-    <!-- Servicio 2 -->
-    <div class="bg-white p-6 rounded-xl shadow-md card-hover">
-      <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
-        <i data-feather="camera" class="text-green-600"></i>
-      </div>
-      <h3 class="text-xl font-semibold mb-2">Cámaras y Digiturnos</h3>
-      <p class="text-gray-600">Instalación y configuración de CCTV, DVR, NVR. Sistemas de turnos para negocios.</p>
-    </div>
-    
-    <!-- Servicio 3 -->
-    <div class="bg-white p-6 rounded-xl shadow-md card-hover">
-      <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
-        <i data-feather="monitor" class="text-purple-600"></i>
-      </div>
-      <h3 class="text-xl font-semibold mb-2">Soporte Remoto</h3>
-      <p class="text-gray-600">Conexión segura para resolver problemas de software, sistemas de ventas y configuración.</p>
-    </div>
-    
-    <!-- Servicio 4 -->
-    <div class="bg-white p-6 rounded-xl shadow-md card-hover">
-      <div class="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center mb-4">
-        <i data-feather="hard-drive" class="text-yellow-600"></i>
-      </div>
-      <h3 class="text-xl font-semibold mb-2">Reparación de PC</h3>
-      <p class="text-gray-600">Limpieza de hardware, cambio de componentes, optimización de sistemas operativos.</p>
-    </div>
-    
-    <!-- Servicio 5 -->
-    <div class="bg-white p-6 rounded-xl shadow-md card-hover">
-      <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4">
-        <i data-feather="shopping-cart" class="text-red-600"></i>
-      </div>
-      <h3 class="text-xl font-semibold mb-2">Sistemas de Ventas</h3>
-      <p class="text-gray-600">Configuración de software Punto de Venta, inventarios, facturación electrónica.</p>
-    </div>
-    
-    <!-- Servicio 6 -->
-    <div class="bg-white p-6 rounded-xl shadow-md card-hover">
-      <div class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mb-4">
-        <i data-feather="tool" class="text-indigo-600"></i>
-      </div>
-      <h3 class="text-xl font-semibold mb-2">Mantenimiento General</h3>
-      <p class="text-gray-600">Planes preventivos para empresas. Visitas programadas y soporte prioritario.</p>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
     </div>
   </div>
 </section>
 
-<!-- ========== CASOS DE ÉXITO ========== -->
-<section class="bg-gray-100 py-16 px-4 sm:px-6 lg:px-8">
-  <div class="max-w-6xl mx-auto">
-    <div class="text-center mb-12">
-      <h2 class="text-3xl font-bold text-gray-900 mb-2">Casos de Éxito</h2>
-      <p class="text-gray-600 text-lg">Resultados reales que demuestran experiencia</p>
+<!-- SERVICIOS -->
+<section id="servicios">
+  <p class="section-subtitle">LO QUE HAGO MEJOR</p>
+  <h2 class="section-title">Servicios Especializados</h2>
+  <div class="services-grid">
+    <div class="service-card" data-aos="flip-left">
+      <i class="fas fa-print service-icon"></i>
+      <h3>Impresoras HP LaserJet</h3>
+      <p>Diagnóstico y reparación de errores 49, 79, atascos. Mantenimiento preventivo de monocromáticas y color.</p>
     </div>
-    
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      <div class="bg-white p-6 rounded-xl shadow">
-        <div class="flex items-start gap-4">
-          <div class="bg-blue-100 p-2 rounded-full">
-            <i data-feather="check-circle" class="text-blue-600"></i>
-          </div>
-          <div>
-            <h3 class="font-semibold text-lg">Error 49 en HP LaserJet M402</h3>
-            <p class="text-gray-500 text-sm mb-2">Cliente: Droguería Ciénaga</p>
-            <p class="text-gray-700">Actualización de firmware y limpieza de memoria NVRAM. Tiempo de respuesta: 2 horas. Impresora funcionando sin fallos.</p>
-          </div>
-        </div>
-      </div>
-      
-      <div class="bg-white p-6 rounded-xl shadow">
-        <div class="flex items-start gap-4">
-          <div class="bg-green-100 p-2 rounded-full">
-            <i data-feather="check-circle" class="text-green-600"></i>
-          </div>
-          <div>
-            <h3 class="font-semibold text-lg">Sistema de Turnos Caído</h3>
-            <p class="text-gray-500 text-sm mb-2">Cliente: EPS Local</p>
-            <p class="text-gray-700">Restauración de base de datos y reconfiguración de red local. Solución remota en 1 hora.</p>
-          </div>
-        </div>
-      </div>
-      
-      <div class="bg-white p-6 rounded-xl shadow">
-        <div class="flex items-start gap-4">
-          <div class="bg-purple-100 p-2 rounded-full">
-            <i data-feather="check-circle" class="text-purple-600"></i>
-          </div>
-          <div>
-            <h3 class="font-semibold text-lg">PC No Enciende (Fuente Dañada)</h3>
-            <p class="text-gray-500 text-sm mb-2">Cliente: Oficina Contable</p>
-            <p class="text-gray-700">Diagnóstico en sitio, reemplazo de fuente de poder y backup de datos. Equipo operativo en 3 horas.</p>
-          </div>
-        </div>
-      </div>
-      
-      <div class="bg-white p-6 rounded-xl shadow">
-        <div class="flex items-start gap-4">
-          <div class="bg-yellow-100 p-2 rounded-full">
-            <i data-feather="check-circle" class="text-yellow-600"></i>
-          </div>
-          <div>
-            <h3 class="font-semibold text-lg">Cámaras de Seguridad sin Grabación</h3>
-            <p class="text-gray-500 text-sm mb-2">Cliente: Supermercado Local</p>
-            <p class="text-gray-700">Reconfiguración de DVR y formateo de disco duro. Sistema de vigilancia 100% funcional.</p>
-          </div>
-        </div>
+    <div class="service-card" data-aos="flip-left" data-aos-delay="100">
+      <i class="fas fa-video service-icon"></i>
+      <h3>Cámaras & CCTV</h3>
+      <p>Instalación, configuración de DVR/NVR, cámaras IP, y sistemas de digiturnos para negocios.</p>
+    </div>
+    <div class="service-card" data-aos="flip-left" data-aos-delay="200">
+      <i class="fas fa-desktop service-icon"></i>
+      <h3>Soporte Remoto 24/7</h3>
+      <p>Conexión segura para resolver fallos de software, sistemas de ventas y configuración de redes.</p>
+    </div>
+    <div class="service-card" data-aos="flip-left" data-aos-delay="300">
+      <i class="fas fa-tools service-icon"></i>
+      <h3>Reparación de PC</h3>
+      <p>Cambio de componentes, limpieza profunda, optimización de Windows y recuperación de datos.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PORTAFOLIO CON FILTROS -->
+<section id="portafolio">
+  <p class="section-subtitle">TRABAJOS REALIZADOS</p>
+  <h2 class="section-title">Casos de Éxito</h2>
+  <div class="filter-buttons">
+    <button class="filter-btn active" data-filter="all">Todos</button>
+    <button class="filter-btn" data-filter="impresoras">Impresoras</button>
+    <button class="filter-btn" data-filter="camaras">Cámaras</button>
+    <button class="filter-btn" data-filter="software">Software</button>
+  </div>
+  <div class="portfolio-grid">
+    <div class="portfolio-item" data-category="impresoras">
+      <img src="https://images.pexels.com/photos/6804605/pexels-photo-6804605.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Impresora reparada">
+      <div style="padding:1rem; background:white;"><h4>Error 49 HP M402</h4><p>Actualización de firmware</p></div>
+    </div>
+    <div class="portfolio-item" data-category="camaras">
+      <img src="https://images.pexels.com/photos/3206172/pexels-photo-3206172.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Cámaras">
+      <div style="padding:1rem; background:white;"><h4>Sistema CCTV Supermercado</h4><p>Configuración DVR</p></div>
+    </div>
+    <div class="portfolio-item" data-category="software">
+      <img src="https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Software POS">
+      <div style="padding:1rem; background:white;"><h4>Punto de Venta</h4><p>Restauración base de datos</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARADOR ANTES/DESPUÉS -->
+<section style="background:#f1f5f9;">
+  <p class="section-subtitle">RESULTADOS VISIBLES</p>
+  <h2 class="section-title">Antes y Después</h2>
+  <div class="comparison-slider" id="comparisonSlider">
+    <img src="https://images.pexels.com/photos/4219882/pexels-photo-4219882.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Antes">
+    <div class="img-after">
+      <img src="https://images.pexels.com/photos/5768358/pexels-photo-5768358.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Después">
+    </div>
+    <div class="slider-handle" id="sliderHandle"></div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto">
+  <p class="section-subtitle">HABLEMOS</p>
+  <h2 class="section-title">¿Necesitas ayuda técnica?</h2>
+  <div style="display:flex; flex-wrap:wrap; gap:40px; justify-content:center;">
+    <div style="flex:1; min-width:300px;">
+      <form action="https://formspree.io/f/TU_FORM_ID" method="POST">
+        <input type="text" name="nombre" placeholder="Tu nombre" required style="width:100%; padding:12px; margin-bottom:15px; border:1px solid #ddd; border-radius:12px;">
+        <input type="email" name="email" placeholder="Correo electrónico" required style="width:100%; padding:12px; margin-bottom:15px; border:1px solid #ddd; border-radius:12px;">
+        <textarea name="mensaje" rows="4" placeholder="Describe tu problema..." style="width:100%; padding:12px; border:1px solid #ddd; border-radius:12px;"></textarea>
+        <button type="submit" style="margin-top:20px; background:var(--primary); color:white; border:none; padding:12px 30px; border-radius:40px; font-weight:600; cursor:pointer;">Enviar mensaje</button>
+      </form>
+    </div>
+    <div style="flex:1; min-width:250px;">
+      <h3>Contacto Directo</h3>
+      <p><i class="fas fa-map-marker-alt"></i> Ciénaga, Magdalena</p>
+      <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/57XXXXXXXXXX" target="_blank">+57 300 000 0000</a></p>
+      <p><i class="far fa-envelope"></i> contacto@jctech.co</p>
+      <div style="margin-top:30px;">
+        <a href="https://wa.me/57XXXXXXXXXX" target="_blank" style="display:inline-block; background:#25D366; color:white; padding:12px 25px; border-radius:40px; text-decoration:none;"><i class="fab fa-whatsapp"></i> Chatear por WhatsApp</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ========== CONTACTO Y UBICACIÓN ========== -->
-<section id="contacto" class="py-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
-  <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-    <div>
-      <h2 class="text-3xl font-bold text-gray-900 mb-4">Contacto Directo</h2>
-      <p class="text-gray-600 mb-6">Estoy disponible para resolver tus dudas y agendar servicios.</p>
-      
-      <div class="space-y-4">
-        <div class="flex items-center gap-3">
-          <i data-feather="map-pin" class="text-blue-600"></i>
-          <span class="text-gray-700">Ciénaga, Magdalena, Colombia</span>
-        </div>
-        <div class="flex items-center gap-3">
-          <i data-feather="phone" class="text-blue-600"></i>
-          <span class="text-gray-700">+57 300 000 0000 (Reemplaza con tu número)</span>
-        </div>
-        <div class="flex items-center gap-3">
-          <i data-feather="mail" class="text-blue-600"></i>
-          <span class="text-gray-700">jeiner@jctech.co (Reemplaza con tu correo)</span>
-        </div>
-      </div>
-      
-      <div class="mt-8">
-        <a href="https://wa.me/57XXXXXXXXXX?text=Hola%20JCTECH%2C%20necesito%20ayuda%20con..." target="_blank" class="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-lg shadow transition">
-          <i data-feather="message-circle"></i> Enviar WhatsApp
-        </a>
-      </div>
-    </div>
-    
-    <div class="bg-gray-100 p-6 rounded-xl">
-      <h3 class="text-xl font-semibold mb-4">Horario de Atención</h3>
-      <ul class="space-y-2 text-gray-700">
-        <li class="flex justify-between border-b pb-2"><span>Lunes a Viernes</span> <span>8:00 AM - 6:00 PM</span></li>
-        <li class="flex justify-between border-b pb-2"><span>Sábados</span> <span>9:00 AM - 1:00 PM</span></li>
-        <li class="flex justify-between"><span>Domingos y Festivos</span> <span>Solo urgencias (WhatsApp)</span></li>
-      </ul>
-      <p class="mt-4 text-sm text-gray-500">*El chat con IA está disponible 24/7 para consultas básicas.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ========== FOOTER ========== -->
-<footer class="gradient-bg text-white py-6 px-4 text-center">
+<footer>
   <p>© 2025 JCTECH · Tecnología con raíces en Ciénaga, Magdalena</p>
-  <p class="text-gray-400 text-sm mt-2">Diseñado para ofrecer soluciones confiables y profesionales.</p>
 </footer>
 
-<!-- ========== CHATBASE IA (DeltaBot) ========== -->
-<!-- Reemplaza "TU_CHATBOT_ID" con el ID que obtengas de Chatbase -->
+<!-- CHATBASE IA (Sustituye TU_CHATBOT_ID) -->
 <script>
-  window.chatbaseConfig = {
-    chatbotId: "TU_CHATBOT_ID",
-  }
+  window.chatbaseConfig = { chatbotId: "TU_CHATBOT_ID" };
 </script>
-<script
-  src="https://www.chatbase.co/embed.min.js"
-  id="TU_CHATBOT_ID"
-  defer>
-</script>
+<script src="https://www.chatbase.co/embed.min.js" id="TU_CHATBOT_ID" defer></script>
 
-<!-- Inicializar Feather Icons -->
+<!-- SCRIPTS JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-  feather.replace();
+  // Inicializar AOS
+  AOS.init({ duration: 800, once: true });
+  
+  // Swiper
+  const swiper = new Swiper('.mySwiper', {
+    loop: true, pagination: { el: '.swiper-pagination', clickable: true },
+    navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+    autoplay: { delay: 4000 },
+  });
+  
+  // Menú lateral
+  const menuToggle = document.getElementById('menuToggle');
+  const sideMenu = document.getElementById('sideMenu');
+  const overlay = document.getElementById('overlay');
+  const closeMenu = document.getElementById('closeMenu');
+  menuToggle.addEventListener('click', () => { sideMenu.classList.add('active'); overlay.classList.add('active'); });
+  closeMenu.addEventListener('click', () => { sideMenu.classList.remove('active'); overlay.classList.remove('active'); });
+  overlay.addEventListener('click', () => { sideMenu.classList.remove('active'); overlay.classList.remove('active'); });
+  
+  // Filtro de portafolio
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const items = document.querySelectorAll('.portfolio-item');
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.dataset.filter;
+      items.forEach(item => {
+        if(filter === 'all' || item.dataset.category === filter) item.style.display = 'block';
+        else item.style.display = 'none';
+      });
+    });
+  });
+  
+  // Slider comparador antes/después
+  const slider = document.getElementById('comparisonSlider');
+  const afterImg = slider.querySelector('.img-after');
+  const handle = document.getElementById('sliderHandle');
+  let isDragging = false;
+  const slide = (x) => {
+    const rect = slider.getBoundingClientRect();
+    let pos = (x - rect.left) / rect.width * 100;
+    pos = Math.min(100, Math.max(0, pos));
+    afterImg.style.width = `${pos}%`;
+    handle.style.left = `${pos}%`;
+  };
+  handle.addEventListener('mousedown', () => isDragging = true);
+  window.addEventListener('mouseup', () => isDragging = false);
+  window.addEventListener('mousemove', (e) => { if(isDragging) slide(e.clientX); });
+  slider.addEventListener('mousedown', (e) => { slide(e.clientX); isDragging = true; });
 </script>
 
 </body>

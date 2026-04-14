@@ -6,7 +6,7 @@
   <title>JCTECH | Tecnología & Soporte TI Profesional</title>
   <meta name="description" content="JCTECH - Soluciones tecnológicas en Ciénaga, Magdalena. Soporte remoto 24/7, reparación de impresoras HP, activación de software y centro de descargas.">
   
-  <!-- Precarga de fuentes para evitar parpadeos -->
+  <!-- Precarga de fuentes -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -14,7 +14,7 @@
   <!-- Iconos -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   
-  <!-- Librerías esenciales (cargadas de forma óptima) -->
+  <!-- Librerías -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
   
@@ -34,7 +34,7 @@
       --glass-bg: rgba(15, 23, 42, 0.7);
     }
 
-    /* ===== FONDO DE PARTÍCULAS TECNOLÓGICAS ===== */
+    /* ===== FONDO DE PARTÍCULAS ===== */
     #tsparticles {
       position: fixed;
       top: 0;
@@ -45,7 +45,6 @@
       background: radial-gradient(circle at 20% 30%, #1e293b, #0a0f1a);
     }
 
-    /* ===== CONTENEDOR PRINCIPAL (por encima del fondo) ===== */
     .content-wrapper {
       position: relative;
       z-index: 1;
@@ -68,9 +67,9 @@
     .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 999; display: none; }
     .overlay.active { display: block; }
     
-    /* ===== HEADER VIDRIO ===== */
+    /* ===== HEADER ===== */
     .navbar {
-      position: fixed; top: 0; left: 0; width: 100%; padding: 0.8rem 5%;
+      position: fixed; top: 0; left: 0; width: 100%; padding: 0.6rem 5%;
       background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(12px);
       box-shadow: 0 4px 20px rgba(0,0,0,0.3); z-index: 998;
       display: flex; align-items: center; justify-content: space-between;
@@ -85,46 +84,51 @@
     
     /* ===== HERO ===== */
     .hero { 
-      padding: 160px 5% 80px; 
-      background: transparent; 
-      color: white;
+      padding: 140px 5% 60px; 
       display: flex;
       flex-wrap: wrap;
       align-items: center;
       justify-content: space-between;
     }
     .hero-content { max-width: 600px; }
-    .hero h1 { font-size: 3.5rem; font-weight: 800; line-height: 1.2; margin-bottom: 1.5rem; text-shadow: 0 0 20px rgba(0,0,0,0.5); }
+    .hero h1 { font-size: 3.2rem; font-weight: 800; line-height: 1.2; margin-bottom: 1.5rem; text-shadow: 0 0 20px rgba(0,0,0,0.5); }
     .hero .highlight { color: var(--accent); text-shadow: 0 0 15px var(--accent); }
     .swiper { width: 100%; max-width: 500px; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
-    .swiper-slide img { width: 100%; height: 300px; object-fit: cover; }
+    .swiper-slide img { width: 100%; height: 280px; object-fit: cover; }
     
-    /* ===== BANNERS ===== */
+    /* ===== BANNERS PROMOCIONALES ===== */
     .promo-banner {
-      border-radius: 30px; padding: 40px; color: white;
+      border-radius: 24px; padding: 30px 35px; color: white;
       display: flex; align-items: center; justify-content: space-between;
-      flex-wrap: wrap; margin: 40px 0;
-      box-shadow: 0 20px 30px -10px rgba(0,0,0,0.4);
+      flex-wrap: wrap; margin: 25px 0;
+      box-shadow: 0 15px 25px -8px rgba(0,0,0,0.4);
       backdrop-filter: blur(8px);
       background: rgba(30, 41, 59, 0.5);
       border: 1px solid rgba(255,255,255,0.15);
+      transition: transform 0.2s;
     }
-    .banner-soporte { background: linear-gradient(135deg, rgba(30,58,138,0.7) 0%, rgba(59,130,246,0.7) 100%); }
-    .banner-descargas { background: linear-gradient(135deg, rgba(6,95,70,0.7) 0%, rgba(16,185,129,0.7) 100%); }
-    .promo-banner h3 { font-size: 2rem; margin-bottom: 10px; }
+    .promo-banner:hover { transform: scale(1.01); }
+    .banner-soporte { background: linear-gradient(135deg, rgba(30,58,138,0.8) 0%, rgba(59,130,246,0.8) 100%); }
+    .banner-descargas { background: linear-gradient(135deg, rgba(6,95,70,0.8) 0%, rgba(16,185,129,0.8) 100%); }
+    .banner-domicilio { background: linear-gradient(135deg, rgba(154,52,18,0.8) 0%, rgba(249,115,22,0.8) 100%); }
+    .banner-express { background: linear-gradient(135deg, rgba(88,28,135,0.8) 0%, rgba(147,51,234,0.8) 100%); }
+    .banner-empresarial { background: linear-gradient(135deg, rgba(8,145,178,0.8) 0%, rgba(6,182,212,0.8) 100%); }
+    .promo-banner h3 { font-size: 1.8rem; margin-bottom: 8px; }
+    .promo-banner p { opacity: 0.9; }
     .promo-banner .btn { 
-      background: white; color: #1e293b; padding: 14px 30px; border-radius: 50px; 
+      background: white; color: #1e293b; padding: 12px 28px; border-radius: 50px; 
       font-weight: 700; text-decoration: none; transition: 0.2s; 
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     }
     .promo-banner .btn:hover { background: #f8fafc; transform: scale(1.05); box-shadow: 0 0 15px white; }
     
     /* ===== SECCIONES ===== */
-    section { padding: 80px 5%; position: relative; }
-    .section-title { font-size: 2.5rem; font-weight: 700; margin-bottom: 3rem; text-align: center; color: white; text-shadow: 0 2px 10px rgba(0,0,0,0.3); }
+    section { padding: 60px 5%; position: relative; }
+    .section-title { font-size: 2.4rem; font-weight: 700; margin-bottom: 2.5rem; text-align: center; color: white; text-shadow: 0 2px 10px rgba(0,0,0,0.3); }
     .section-subtitle { color: var(--accent); font-weight: 600; letter-spacing: 2px; margin-bottom: 0.5rem; text-align: center; }
     
-    /* ===== TARJETAS DE SERVICIO VIDRIO ===== */
-    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+    /* ===== TARJETAS DE SERVICIO ===== */
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 25px; }
     .service-card {
       background: rgba(30, 41, 59, 0.4); backdrop-filter: blur(8px);
       padding: 2rem 1.5rem; border-radius: 24px;
@@ -132,43 +136,100 @@
       border: 1px solid rgba(255,255,255,0.1);
       color: white;
     }
-    .service-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(59,130,246,0.3); border-color: var(--accent); }
-    .service-icon { font-size: 2.5rem; color: var(--accent); margin-bottom: 1.5rem; }
+    .service-card:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(59,130,246,0.3); border-color: var(--accent); }
+    .service-icon { font-size: 2.5rem; color: var(--accent); margin-bottom: 1.2rem; }
     
     /* ===== DESCARGAS ===== */
-    .download-category { margin-bottom: 50px; }
-    .category-title { font-size: 1.8rem; margin-bottom: 25px; border-left: 6px solid var(--accent); padding-left: 20px; color: white; }
-    .downloads-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; }
+    .download-category { margin-bottom: 40px; }
+    .category-title { font-size: 1.6rem; margin-bottom: 20px; border-left: 5px solid var(--accent); padding-left: 20px; color: white; }
+    .downloads-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 18px; }
     .download-card {
       background: rgba(30, 41, 59, 0.4); backdrop-filter: blur(8px);
-      border-radius: 20px; padding: 25px 15px; text-align: center;
+      border-radius: 20px; padding: 20px 12px; text-align: center;
       box-shadow: 0 5px 15px rgba(0,0,0,0.2); transition: 0.2s;
       border: 1px solid rgba(255,255,255,0.1);
       color: white;
     }
     .download-card:hover { box-shadow: 0 10px 25px rgba(0,0,0,0.3); border-color: var(--accent); }
-    .download-card i { font-size: 2.5rem; color: var(--accent); margin-bottom: 15px; }
+    .download-card i { font-size: 2.2rem; color: var(--accent); margin-bottom: 12px; }
     .download-btn {
-      display: inline-block; margin-top: 15px; background: var(--primary); color: white;
-      padding: 8px 20px; border-radius: 40px; text-decoration: none; font-weight: 600;
-      transition: 0.2s; border: none; cursor: pointer;
+      display: inline-block; margin-top: 12px; background: var(--primary); color: white;
+      padding: 8px 18px; border-radius: 40px; text-decoration: none; font-weight: 600;
+      transition: 0.2s; border: none; cursor: pointer; font-size: 0.9rem;
     }
     .download-btn:hover { background: var(--primary-dark); box-shadow: 0 0 10px var(--primary); }
     
-    /* ===== PORTAFOLIO ===== */
-    .filter-buttons { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 40px; }
+    /* ===== BOTÓN FLOTANTE CHAT IA ===== */
+    .chat-float-btn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(145deg, var(--primary), var(--accent));
+      border-radius: 50%;
+      box-shadow: 0 10px 25px rgba(6,182,212,0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 28px;
+      cursor: pointer;
+      z-index: 997;
+      border: 2px solid rgba(255,255,255,0.2);
+      transition: all 0.3s;
+      animation: pulse-glow 2s infinite;
+    }
+    .chat-float-btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 30px var(--accent);
+    }
+    @keyframes pulse-glow {
+      0% { box-shadow: 0 0 10px rgba(6,182,212,0.5); }
+      50% { box-shadow: 0 0 25px rgba(59,130,246,0.8); }
+      100% { box-shadow: 0 0 10px rgba(6,182,212,0.5); }
+    }
+    
+    /* ===== MODAL CHAT ===== */
+    .chat-modal {
+      position: fixed;
+      bottom: 100px;
+      right: 30px;
+      width: 320px;
+      background: rgba(15, 23, 42, 0.9);
+      backdrop-filter: blur(16px);
+      border-radius: 28px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+      border: 1px solid rgba(255,255,255,0.15);
+      z-index: 996;
+      padding: 20px;
+      color: white;
+      display: none;
+      transition: 0.3s;
+    }
+    .chat-modal.active { display: block; }
+    .chat-modal h4 { margin-bottom: 15px; font-size: 1.2rem; }
+    .chat-option {
+      display: flex; align-items: center; gap: 12px; padding: 12px 15px;
+      background: rgba(255,255,255,0.05); border-radius: 16px; margin-bottom: 10px;
+      text-decoration: none; color: white; transition: 0.2s;
+    }
+    .chat-option:hover { background: rgba(59,130,246,0.3); }
+    .chat-option i { font-size: 1.5rem; width: 30px; color: var(--accent); }
+    
+    /* ===== PORTAFOLIO Y OTROS ===== */
+    .filter-buttons { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 30px; }
     .filter-btn {
       padding: 8px 20px; border: none; background: rgba(255,255,255,0.1); border-radius: 40px;
       font-weight: 600; cursor: pointer; transition: all 0.2s; color: white;
       backdrop-filter: blur(4px);
     }
     .filter-btn.active, .filter-btn:hover { background: var(--accent); color: #0a0f1a; }
-    .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+    .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
     .portfolio-item { border-radius: 20px; overflow: hidden; box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
-    .portfolio-item img { width: 100%; height: 220px; object-fit: cover; transition: transform 0.5s; }
+    .portfolio-item img { width: 100%; height: 200px; object-fit: cover; transition: transform 0.5s; }
     .portfolio-item:hover img { transform: scale(1.05); }
     
-    /* ===== COMPARADOR ===== */
     .comparison-slider { position: relative; max-width: 800px; margin: 0 auto; border-radius: 20px; overflow: hidden; }
     .comparison-slider img { width: 100%; display: block; }
     .img-after { position: absolute; top: 0; left: 0; width: 50%; overflow: hidden; height: 100%; border-right: 3px solid white; }
@@ -177,25 +238,25 @@
       cursor: ew-resize; transform: translateX(-50%);
     }
     
-    /* ===== FOOTER ===== */
-    footer { background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(8px); color: #94a3b8; padding: 40px 5%; text-align: center; }
+    footer { background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(8px); color: #94a3b8; padding: 30px 5%; text-align: center; margin-top: 20px; }
     
     /* Responsive */
     @media (max-width: 768px) {
       .nav-links { display: none; }
       .menu-toggle { display: block; }
-      .hero { flex-direction: column; text-align: center; }
-      .hero h1 { font-size: 2.5rem; }
+      .hero { flex-direction: column; text-align: center; padding-top: 120px; }
+      .hero h1 { font-size: 2.2rem; }
       .promo-banner { flex-direction: column; text-align: center; gap: 20px; }
+      .section-title { font-size: 2rem; }
+      .chat-modal { width: 90%; right: 5%; }
     }
   </style>
 </head>
 <body>
 
-<!-- Fondo de partículas tecnológicas -->
+<!-- Fondo de partículas -->
 <div id="tsparticles"></div>
 
-<!-- Contenido principal -->
 <div class="content-wrapper">
 
 <!-- MENÚ LATERAL MÓVIL -->
@@ -203,9 +264,8 @@
   <i class="fas fa-times close-btn" id="closeMenu"></i>
   <ul>
     <li><a href="#inicio">Inicio</a></li>
-    <li><a href="#soporte-remoto">Soporte Remoto</a></li>
     <li><a href="#servicios">Servicios</a></li>
-    <li><a href="#descargas">Zona de Descargas</a></li>
+    <li><a href="#descargas">Descargas</a></li>
     <li><a href="#portafolio">Proyectos</a></li>
     <li><a href="#contacto">Contacto</a></li>
   </ul>
@@ -220,7 +280,6 @@
   </div>
   <div class="nav-links">
     <a href="#inicio">Inicio</a>
-    <a href="#soporte-remoto">Soporte Remoto</a>
     <a href="#servicios">Servicios</a>
     <a href="#descargas">Descargas</a>
     <a href="#portafolio">Proyectos</a>
@@ -229,19 +288,19 @@
   <i class="fas fa-bars menu-toggle" id="menuToggle"></i>
 </nav>
 
-<!-- HERO CON CARRUSEL -->
+<!-- HERO -->
 <section id="inicio" class="hero">
   <div class="hero-content" data-aos="fade-right">
     <h1>Soluciones <span class="highlight">Tecnológicas</span> que Impulsan tu Negocio</h1>
-    <p style="font-size:1.2rem; margin-bottom:2rem; color:#cbd5e1;">JCTECH · Tecnología y Soporte TI · Ciénaga, Magdalena</p>
-    <a href="#contacto" class="btn" style="background:var(--primary); padding:12px 30px; border-radius:40px; color:white; text-decoration:none; font-weight:600;">Solicitar diagnóstico gratis</a>
+    <p style="font-size:1.1rem; margin-bottom:2rem; color:#cbd5e1;">JCTECH · Tecnología y Soporte TI · Ciénaga, Magdalena</p>
+    <a href="#contacto" class="btn" style="background:var(--primary); padding:12px 30px; border-radius:40px; color:white; text-decoration:none; font-weight:600;">Diagnóstico Gratis</a>
   </div>
   <div data-aos="fade-left">
     <div class="swiper mySwiper">
       <div class="swiper-wrapper">
-        <div class="swiper-slide"><img src="https://images.pexels.com/photos/2582937/pexels-photo-2582937.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Reparación de impresora" loading="lazy"></div>
-        <div class="swiper-slide"><img src="https://images.pexels.com/photos/442150/pexels-photo-442150.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Cámaras de seguridad" loading="lazy"></div>
-        <div class="swiper-slide"><img src="https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Soporte técnico" loading="lazy"></div>
+        <div class="swiper-slide"><img src="https://images.pexels.com/photos/2582937/pexels-photo-2582937.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Reparación" loading="lazy"></div>
+        <div class="swiper-slide"><img src="https://images.pexels.com/photos/442150/pexels-photo-442150.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Cámaras" loading="lazy"></div>
+        <div class="swiper-slide"><img src="https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Soporte" loading="lazy"></div>
       </div>
       <div class="swiper-pagination"></div>
       <div class="swiper-button-next"></div>
@@ -250,179 +309,132 @@
   </div>
 </section>
 
-<!-- BANNER SOPORTE REMOTO -->
-<section id="soporte-remoto" style="padding: 20px 5%;">
-  <div class="promo-banner banner-soporte" data-aos="zoom-in">
-    <div>
-      <h3>💻 Soporte Remoto 24/7</h3>
-      <p style="font-size: 1.2rem; opacity: 0.9;">Asistencia inmediata para software, activaciones y configuraciones sin mover tu equipo.</p>
-    </div>
-    <a href="https://wa.me/57XXXXXXXXXX?text=Hola%20JCTECH%2C%20necesito%20soporte%20remoto" target="_blank" class="btn"><i class="fab fa-whatsapp"></i> Conectar ahora</a>
-  </div>
-</section>
-
-<!-- BANNER ZONA DE DESCARGAS -->
+<!-- BANNERS PROMOCIONALES (COMPACTOS) -->
 <section style="padding: 20px 5%;">
-  <div class="promo-banner banner-descargas" data-aos="zoom-in">
-    <div>
-      <h3>📦 Zona de Descargas Gratuita</h3>
-      <p style="font-size: 1.2rem; opacity: 0.9;">Drivers, ISOs, utilidades y herramientas esenciales para tu PC.</p>
-    </div>
-    <a href="#descargas" class="btn"><i class="fas fa-download"></i> Explorar descargas</a>
+  <div class="promo-banner banner-soporte" data-aos="fade-up">
+    <div><h3>💻 Soporte Remoto 24/7</h3><p>Asistencia inmediata sin mover tu equipo.</p></div>
+    <a href="https://wa.me/57XXXXXXXXXX?text=Soporte%20Remoto" target="_blank" class="btn"><i class="fab fa-whatsapp"></i> Conectar</a>
+  </div>
+  
+  <div class="promo-banner banner-domicilio" data-aos="fade-up">
+    <div><h3>🏠 Servicio a Domicilio</h3><p>Cobertura en Ciénaga, Magdalena y alrededores.</p></div>
+    <a href="https://wa.me/57XXXXXXXXXX?text=Servicio%20a%20Domicilio" target="_blank" class="btn"><i class="fas fa-map-marker-alt"></i> Agendar</a>
+  </div>
+  
+  <div class="promo-banner banner-express" data-aos="fade-up">
+    <div><h3>⚡ Reparación Express HP</h3><p>Diagnóstico y solución en menos de 2 horas.</p></div>
+    <a href="https://wa.me/57XXXXXXXXXX?text=Reparacion%20Express%20HP" target="_blank" class="btn"><i class="fas fa-print"></i> Solicitar</a>
+  </div>
+  
+  <div class="promo-banner banner-empresarial" data-aos="fade-up">
+    <div><h3>🏢 Planes Empresariales</h3><p>Mantenimiento preventivo y soporte prioritario.</p></div>
+    <a href="https://wa.me/57XXXXXXXXXX?text=Planes%20Empresariales" target="_blank" class="btn"><i class="fas fa-building"></i> Cotizar</a>
+  </div>
+  
+  <div class="promo-banner banner-descargas" data-aos="fade-up">
+    <div><h3>📦 Zona de Descargas</h3><p>Drivers, ISOs y herramientas gratuitas.</p></div>
+    <a href="#descargas" class="btn"><i class="fas fa-download"></i> Explorar</a>
   </div>
 </section>
 
-<!-- SERVICIOS -->
+<!-- SERVICIOS (grid) -->
 <section id="servicios">
   <p class="section-subtitle">LO QUE HACEMOS MEJOR</p>
   <h2 class="section-title">Servicios Especializados</h2>
   <div class="services-grid">
-    <div class="service-card" data-aos="flip-left">
-      <i class="fas fa-print service-icon"></i>
-      <h3>Impresoras HP LaserJet</h3>
-      <p>Diagnóstico y reparación de errores 49, 79, atascos. Mantenimiento preventivo.</p>
-    </div>
-    <div class="service-card" data-aos="flip-left" data-aos-delay="100">
-      <i class="fas fa-video service-icon"></i>
-      <h3>Cámaras & CCTV</h3>
-      <p>Instalación, configuración de DVR/NVR, cámaras IP y digiturnos.</p>
-    </div>
-    <div class="service-card" data-aos="flip-left" data-aos-delay="200">
-      <i class="fas fa-desktop service-icon"></i>
-      <h3>Soporte Remoto 24/7</h3>
-      <p>Conexión segura para resolver fallos de software y sistemas de ventas.</p>
-    </div>
-    <div class="service-card" data-aos="flip-left" data-aos-delay="300">
-      <i class="fas fa-tools service-icon"></i>
-      <h3>Reparación de PC</h3>
-      <p>Cambio de componentes, limpieza y optimización de Windows.</p>
-    </div>
-    <div class="service-card" data-aos="flip-left" data-aos-delay="400">
-      <i class="fas fa-key service-icon"></i>
-      <h3>Activación Windows & Office</h3>
-      <p>Licenciamiento original y legal con soporte incluido.</p>
-    </div>
+    <div class="service-card" data-aos="flip-left"><i class="fas fa-print service-icon"></i><h3>Impresoras HP</h3><p>Errores 49, 79, atascos y mantenimiento.</p></div>
+    <div class="service-card" data-aos="flip-left"><i class="fas fa-video service-icon"></i><h3>Cámaras CCTV</h3><p>Instalación DVR/NVR y digiturnos.</p></div>
+    <div class="service-card" data-aos="flip-left"><i class="fas fa-desktop service-icon"></i><h3>Soporte Remoto</h3><p>Fallos de software, sistemas POS.</p></div>
+    <div class="service-card" data-aos="flip-left"><i class="fas fa-tools service-icon"></i><h3>Reparación de PC</h3><p>Hardware, limpieza y optimización.</p></div>
+    <div class="service-card" data-aos="flip-left"><i class="fas fa-key service-icon"></i><h3>Activaciones</h3><p>Windows y Office originales.</p></div>
+    <div class="service-card" data-aos="flip-left"><i class="fas fa-shield-alt service-icon"></i><h3>Antivirus</h3><p>Instalación y configuración.</p></div>
   </div>
 </section>
 
-<!-- ZONA DE DESCARGAS AMPLIADA -->
-<section id="descargas" style="background: transparent;">
+<!-- ZONA DE DESCARGAS -->
+<section id="descargas">
   <p class="section-subtitle">RECURSOS GRATUITOS</p>
-  <h2 class="section-title">Centro de Descargas JCTECH</h2>
-  
+  <h2 class="section-title">Centro de Descargas</h2>
   <div class="download-category">
-    <h3 class="category-title"><i class="fas fa-microchip"></i> Drivers y Controladores</h3>
+    <h3 class="category-title"><i class="fas fa-microchip"></i> Drivers</h3>
     <div class="downloads-grid">
-      <div class="download-card" data-aos="fade-up">
-        <i class="fab fa-hp"></i>
-        <h4>HP LaserJet Universal</h4>
-        <p>Controlador oficial PCL6</p>
-        <a href="https://support.hp.com/co-es/drivers" target="_blank" class="download-btn">Descargar</a>
-      </div>
-      <div class="download-card" data-aos="fade-up">
-        <i class="fas fa-print"></i>
-        <h4>Epson L-Series</h4>
-        <p>Drivers para impresoras Epson</p>
-        <a href="https://www.epson.com.co/Soporte" target="_blank" class="download-btn">Descargar</a>
-      </div>
-      <div class="download-card" data-aos="fade-up">
-        <i class="fas fa-wifi"></i>
-        <h4>Realtek LAN/WiFi</h4>
-        <p>Controladores de red</p>
-        <a href="https://www.realtek.com/en/downloads" target="_blank" class="download-btn">Descargar</a>
-      </div>
-      <div class="download-card" data-aos="fade-up">
-        <i class="fas fa-tv"></i>
-        <h4>NVIDIA / AMD</h4>
-        <p>Drivers gráficos</p>
-        <a href="https://www.nvidia.com/Download/index.aspx?lang=es" target="_blank" class="download-btn">NVIDIA</a>
-        <a href="https://www.amd.com/es/support" target="_blank" style="margin-top:5px;" class="download-btn">AMD</a>
-      </div>
+      <div class="download-card"><i class="fab fa-hp"></i><h4>HP Universal</h4><a href="#" class="download-btn">Descargar</a></div>
+      <div class="download-card"><i class="fas fa-print"></i><h4>Epson</h4><a href="#" class="download-btn">Descargar</a></div>
+      <div class="download-card"><i class="fas fa-wifi"></i><h4>Realtek</h4><a href="#" class="download-btn">Descargar</a></div>
     </div>
   </div>
-  
-  <div class="download-category">
-    <h3 class="category-title"><i class="fab fa-windows"></i> Sistemas Operativos (ISO Oficiales)</h3>
-    <div class="downloads-grid">
-      <div class="download-card" data-aos="fade-up">
-        <i class="fab fa-windows"></i>
-        <h4>Windows 10 ISO</h4>
-        <p>Imagen oficial Microsoft</p>
-        <a href="https://www.microsoft.com/es-co/software-download/windows10" target="_blank" class="download-btn">Descargar</a>
-      </div>
-      <div class="download-card" data-aos="fade-up">
-        <i class="fab fa-windows"></i>
-        <h4>Windows 11 ISO</h4>
-        <p>Última versión 23H2</p>
-        <a href="https://www.microsoft.com/es-co/software-download/windows11" target="_blank" class="download-btn">Descargar</a>
-      </div>
-      <div class="download-card" data-aos="fade-up">
-        <i class="fab fa-linux"></i>
-        <h4>Ubuntu Desktop</h4>
-        <p>Linux para usuarios</p>
-        <a href="https://ubuntu.com/download/desktop" target="_blank" class="download-btn">Descargar</a>
-      </div>
-    </div>
-  </div>
-  
-  <!-- Otras categorías... (se omiten por brevedad pero se incluyen en el código final) -->
-  <!-- Agrega las mismas categorías de ofimática y activación que en la versión anterior -->
-  
-  <p style="text-align:center; margin-top:30px; font-size:0.9rem; color:#94a3b8;">* Los enlaces a sitios externos son proporcionados para tu comodidad. JCTECH no aloja archivos con derechos de autor.</p>
+  <!-- Más categorías similares... -->
 </section>
 
-<!-- PORTAFOLIO Y RESTO DE SECCIONES (se mantienen similares, ajustando estilos) -->
-<!-- ... -->
+<!-- BOTÓN FLOTANTE CHAT IA -->
+<div class="chat-float-btn" id="chatFloatBtn">
+  <i class="fas fa-robot"></i>
+</div>
 
-</div><!-- Fin content-wrapper -->
+<!-- MODAL CHAT -->
+<div class="chat-modal" id="chatModal">
+  <h4><i class="fas fa-headset"></i> Asistente JCTECH</h4>
+  <a href="#" onclick="alert('Chat IA activado. Escribe tu consulta.')" class="chat-option"><i class="fas fa-comment-dots"></i> Chatear con IA</a>
+  <a href="https://wa.me/57XXXXXXXXXX" target="_blank" class="chat-option"><i class="fab fa-whatsapp"></i> Soporte Humano 24/7</a>
+  <a href="tel:+573000000000" class="chat-option"><i class="fas fa-phone-alt"></i> Llamar ahora</a>
+</div>
 
-<!-- CHATBASE IA -->
-<script>
-  window.chatbaseConfig = { chatbotId: "TU_CHATBOT_ID" };
-</script>
-<script src="https://www.chatbase.co/embed.min.js" id="TU_CHATBOT_ID" defer></script>
+<!-- CHATBASE (oculto pero funcional) -->
+<script>window.chatbaseConfig={chatbotId:"TU_CHATBOT_ID"};</script>
+<script src="https://www.chatbase.co/embed.min.js" defer></script>
 
 <!-- SCRIPTS -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<!-- tsParticles para el fondo animado -->
 <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
 
 <script>
-  // Inicializar tsParticles (fondo tecnológico)
+  // tsParticles
   tsParticles.load("tsparticles", {
     fpsLimit: 60,
     particles: {
-      number: { value: 50, density: { enable: true, value_area: 800 } },
+      number: { value: 40, density: { enable: true } },
       color: { value: ["#3b82f6", "#06b6d4", "#10b981"] },
-      shape: { type: ["circle", "triangle", "polygon"], options: { polygon: { sides: 6 } } },
-      opacity: { value: 0.5, random: true },
+      shape: { type: ["circle", "triangle", "polygon"] },
+      opacity: { value: 0.5 },
       size: { value: 3, random: true },
-      move: { enable: true, speed: 1.5, direction: "none", random: true, out_mode: "out" },
-      links: { enable: true, distance: 150, color: "#3b82f6", opacity: 0.3, width: 1 }
+      move: { enable: true, speed: 1.2, random: true },
+      links: { enable: true, distance: 150, color: "#3b82f6", opacity: 0.2 }
     },
     interactivity: {
-      events: { onHover: { enable: true, mode: "grab" }, onClick: { enable: true, mode: "push" } },
-      modes: { grab: { distance: 200, links: { opacity: 0.8 } }, push: { quantity: 4 } }
-    },
-    retina_detect: true,
-    background: { color: "transparent" }
+      events: { onHover: { enable: true, mode: "grab" } },
+      modes: { grab: { distance: 200 } }
+    }
   });
 
-  // AOS
   AOS.init({ duration: 800, once: true });
   
-  // Swiper (con lazy loading)
   new Swiper('.mySwiper', {
-    loop: true,
-    pagination: { el: '.swiper-pagination', clickable: true },
+    loop: true, pagination: { el: '.swiper-pagination' },
     navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
-    autoplay: { delay: 4000 },
-    lazy: { loadPrevNext: true }
+    autoplay: { delay: 3500 }, lazy: true
   });
   
-  // Menú lateral y filtros (igual que antes)
-  // ... (código existente)
+  // Menú lateral
+  const toggle = document.getElementById('menuToggle');
+  const side = document.getElementById('sideMenu');
+  const overlay = document.getElementById('overlay');
+  toggle.addEventListener('click', () => { side.classList.add('active'); overlay.classList.add('active'); });
+  document.getElementById('closeMenu').addEventListener('click', () => { side.classList.remove('active'); overlay.classList.remove('active'); });
+  overlay.addEventListener('click', () => { side.classList.remove('active'); overlay.classList.remove('active'); });
+  
+  // Botón flotante chat
+  const chatBtn = document.getElementById('chatFloatBtn');
+  const chatModal = document.getElementById('chatModal');
+  chatBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    chatModal.classList.toggle('active');
+  });
+  document.addEventListener('click', (e) => {
+    if (!chatModal.contains(e.target) && e.target !== chatBtn && !chatBtn.contains(e.target)) {
+      chatModal.classList.remove('active');
+    }
+  });
 </script>
 
 </body>

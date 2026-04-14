@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JCTECH | Tecnología que Transforma</title>
-  <meta name="description" content="JCTECH - Jeiner Cantillo, Tecnólogo en Sistemas. Soporte TI profesional, reparación de impresoras HP, cámaras y sistemas. Servicio en Ciénaga, Magdalena.">
+  <title>JCTECH | Soporte TI Profesional & Descargas</title>
+  <meta name="description" content="JCTECH - Jeiner Cantillo, Tecnólogo en Sistemas. Soporte remoto, reparación de impresoras HP, activación de Windows/Office y descarga de drivers. Ciénaga, Magdalena.">
   
   <!-- Fuentes e Iconos -->
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -71,6 +71,36 @@
     .service-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(37,99,235,0.1); }
     .service-icon { font-size: 2.5rem; color: var(--primary); margin-bottom: 1.5rem; }
     
+    /* ===== SOPORTE REMOTO DESTACADO ===== */
+    .remote-support-banner {
+      background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+      border-radius: 30px; padding: 40px; color: white;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; margin: 40px 0;
+      box-shadow: 0 20px 30px -10px rgba(37,99,235,0.3);
+    }
+    .remote-support-banner h3 { font-size: 2rem; margin-bottom: 10px; }
+    .remote-support-banner .btn { background: white; color: var(--primary); padding: 14px 30px; border-radius: 50px; font-weight: 700; text-decoration: none; transition: 0.2s; }
+    .remote-support-banner .btn:hover { background: #f0f9ff; transform: scale(1.05); }
+    
+    /* ===== SECCIÓN DESCARGAS ===== */
+    .downloads-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;
+    }
+    .download-card {
+      background: white; border-radius: 20px; padding: 25px 15px; text-align: center;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: 0.2s;
+    }
+    .download-card:hover { box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+    .download-card i { font-size: 2.5rem; color: var(--primary); margin-bottom: 15px; }
+    .download-card h4 { margin-bottom: 10px; }
+    .download-btn {
+      display: inline-block; margin-top: 15px; background: var(--primary); color: white;
+      padding: 8px 20px; border-radius: 40px; text-decoration: none; font-weight: 600;
+      transition: 0.2s;
+    }
+    .download-btn:hover { background: var(--primary-dark); }
+    
     /* ===== FILTROS DE PORTAFOLIO ===== */
     .filter-buttons { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 40px; }
     .filter-btn {
@@ -100,6 +130,7 @@
       .nav-links { display: none; }
       .menu-toggle { display: block; }
       .hero h1 { font-size: 2.2rem; }
+      .remote-support-banner { flex-direction: column; text-align: center; gap: 20px; }
     }
   </style>
 </head>
@@ -110,9 +141,10 @@
   <i class="fas fa-times close-btn" id="closeMenu"></i>
   <ul>
     <li><a href="#inicio">Inicio</a></li>
+    <li><a href="#soporte-remoto">Soporte Remoto</a></li>
     <li><a href="#servicios">Servicios</a></li>
-    <li><a href="#portafolio">Portafolio</a></li>
-    <li><a href="#testimonios">Testimonios</a></li>
+    <li><a href="#descargas">Descargas</a></li>
+    <li><a href="#portafolio">Proyectos</a></li>
     <li><a href="#contacto">Contacto</a></li>
   </ul>
 </div>
@@ -127,7 +159,9 @@
   </div>
   <div class="nav-links">
     <a href="#inicio">Inicio</a>
+    <a href="#soporte-remoto">Soporte Remoto</a>
     <a href="#servicios">Servicios</a>
+    <a href="#descargas">Descargas</a>
     <a href="#portafolio">Proyectos</a>
     <a href="#contacto">Contacto</a>
   </div>
@@ -152,6 +186,17 @@
       <div class="swiper-button-next"></div>
       <div class="swiper-button-prev"></div>
     </div>
+  </div>
+</section>
+
+<!-- SOPORTE REMOTO DESTACADO -->
+<section id="soporte-remoto" style="padding: 20px 5%;">
+  <div class="remote-support-banner" data-aos="zoom-in">
+    <div>
+      <h3>💻 Soporte Remoto 24/7</h3>
+      <p style="font-size: 1.2rem; opacity: 0.9;">Resuelvo problemas de software, activaciones y configuraciones sin que muevas tu equipo. ¡Rápido y seguro!</p>
+    </div>
+    <a href="https://wa.me/57XXXXXXXXXX?text=Hola%20JCTECH%2C%20necesito%20soporte%20remoto" target="_blank" class="btn"><i class="fab fa-whatsapp"></i> Conectar ahora</a>
   </div>
 </section>
 
@@ -180,7 +225,46 @@
       <h3>Reparación de PC</h3>
       <p>Cambio de componentes, limpieza profunda, optimización de Windows y recuperación de datos.</p>
     </div>
+    <!-- Nuevo servicio: Activación de Windows/Office -->
+    <div class="service-card" data-aos="flip-left" data-aos-delay="400">
+      <i class="fas fa-key service-icon"></i>
+      <h3>Activación Windows & Office</h3>
+      <p>Licenciamiento original y legal para Windows 10/11 y Microsoft Office. Soporte incluido.</p>
+    </div>
   </div>
+</section>
+
+<!-- SECCIÓN DESCARGAS ÚTILES -->
+<section id="descargas" style="background: #f1f5f9;">
+  <p class="section-subtitle">RECURSOS GRATUITOS</p>
+  <h2 class="section-title">Descargas para tu equipo</h2>
+  <div class="downloads-grid">
+    <div class="download-card" data-aos="fade-up">
+      <i class="fas fa-download"></i>
+      <h4>Drivers HP LaserJet</h4>
+      <p>Controladores oficiales para impresoras HP.</p>
+      <a href="https://support.hp.com/co-es/drivers" target="_blank" class="download-btn">Descargar</a>
+    </div>
+    <div class="download-card" data-aos="fade-up" data-aos-delay="100">
+      <i class="fab fa-windows"></i>
+      <h4>ISO Windows 10/11</h4>
+      <p>Imágenes oficiales de Microsoft.</p>
+      <a href="https://www.microsoft.com/es-co/software-download/windows10" target="_blank" class="download-btn">Descargar</a>
+    </div>
+    <div class="download-card" data-aos="fade-up" data-aos-delay="200">
+      <i class="fas fa-file-alt"></i>
+      <h4>Office Suite</h4>
+      <p>Instalador de Microsoft Office.</p>
+      <a href="https://www.microsoft.com/es-co/microsoft-365/try" target="_blank" class="download-btn">Descargar</a>
+    </div>
+    <div class="download-card" data-aos="fade-up" data-aos-delay="300">
+      <i class="fas fa-toolbox"></i>
+      <h4>Herramientas de Activación</h4>
+      <p>Scripts seguros (KMS/VLMCSD).</p>
+      <a href="#" onclick="alert('Contáctame por WhatsApp para recibir el enlace de descarga personalizada.'); return false;" class="download-btn">Solicitar</a>
+    </div>
+  </div>
+  <p style="text-align:center; margin-top:30px; font-size:0.9rem; color:#64748b;">*Los enlaces externos son a sitios oficiales. Para herramientas específicas, contáctame y te asesoro.</p>
 </section>
 
 <!-- PORTAFOLIO CON FILTROS -->
